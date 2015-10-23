@@ -94,6 +94,7 @@ module.exports = generators.Base.extend({
       this.template('controllers/_hello_' + httpLib + '_test.go', controllersDir + 'hello_test.go');
       this.template('models/_hello.go', modelsDir + 'hello.go');
       this.template('models/_hello_test.go', modelsDir + 'hello_test.go');
+      this.template('README.md.erb', 'README.md');
     }
   }
 });
