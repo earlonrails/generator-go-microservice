@@ -1,0 +1,8 @@
+github.com/generalthings/gopro-go-utils/logger      #9840d5522ea8a619d60136a1e1db716fc04b6cd5 !git@github.com:generalthings/gopro-go-utils.git
+github.com/generalthings/gopro-go-utils/services    #9840d5522ea8a619d60136a1e1db716fc04b6cd5 !git@github.com:generalthings/gopro-go-utils.git
+github.com/generalthings/gopro-go-utils/authorizer  #22f548b9706ac4dc68bd0a4ccc59c088fd6d4bba !git@github.com:generalthings/gopro-go-utils.git
+github.com/generalthings/gopro-go-utils/health      #9840d5522ea8a619d60136a1e1db716fc04b6cd5 !git@github.com:generalthings/gopro-go-utils.git
+github.com/generalthings/go-versionite              #a6b0d179566af5e2139f64b27c8978ecac7fc985 !git@github.com:generalthings/go-versionite.git
+github.com/gorilla/context
+github.com/labstack/echo
+github.com/smartystreets/goconvey/convey

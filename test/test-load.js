@@ -3,9 +3,9 @@
 
 var assert = require('assert');
 
-describe('angular-go-martini generator', function () {
-    it('can be imported without blowing up', function () {
-        var app = require('../app');
-        assert(app !== undefined);
-    });
+describe('go-echo generator', function () {
+  it('can be imported without blowing up', function () {
+    var app = require('../app');
+    assert(app !== undefined);
+  });
 });

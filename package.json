@@ -24,7 +24,7 @@
     "test": "mocha"
   },
   "dependencies": {
-    "yeoman-generator": "~0.14.0",
+    "yeoman-generator": "~0.21.1",
     "URIjs": "~1.11.2",
     "lodash": "~2.4.1",
     "underscore.string": "~2.3.3",

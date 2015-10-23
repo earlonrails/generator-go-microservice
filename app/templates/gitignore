@@ -1,4 +1,32 @@
-.DS_Store
-*.swp
-*~
-node_modules
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# Folders
+_obj
+_test
+tmp
+logs
+.vendor
+
+# Architecture specific extensions/prefixes
+*.[568vq]
+[568vq].out
+
+*.cgo1.go
+*.cgo2.c
+_cgo_defun.c
+_cgo_gotypes.go
+_cgo_export.*
+
+_testmain.go
+
+*.exe
+*.test
+roni
+gin-bin
+
+
+# ignore the binary file for now since it gets rebuilt all the time
+social
