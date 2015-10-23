@@ -1,7 +1,7 @@
 package main
 
 import (
-  "<%= _.capitalize(baseName) %>/controllers"
+  "<%= baseName %>/controllers"
   "github.com/labstack/echo"
   mw "github.com/labstack/echo/middleware"
 )

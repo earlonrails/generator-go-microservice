@@ -1,7 +1,7 @@
 package main
 
 import (
-  "<%= _.capitalize(baseName) %>/controllers"
+  "<%= baseName %>/controllers"
   "github.com/julienschmidt/httprouter"
   "net/http"
   "log"
