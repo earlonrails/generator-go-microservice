@@ -9,5 +9,6 @@ import (
 )
 
 func Hello(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+  log.Println("Hello Controller")
   fmt.Fprintf(w, models.Hello())
 }

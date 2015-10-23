@@ -2,6 +2,7 @@ package controllers
 
 import (
   "<%= baseName %>/models"
+  "net/http"
   "github.com/labstack/echo"
   "log"
 )
