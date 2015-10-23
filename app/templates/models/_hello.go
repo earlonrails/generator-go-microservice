@@ -5,5 +5,6 @@ import (
 )
 
 func Hello() string {
+  log.Println("Hello Model")
   return "Hello, World!\n"
 }
