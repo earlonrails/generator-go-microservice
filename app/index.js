@@ -1,4 +1,5 @@
 'use strict';
+
 var util       = require('util'),
     path       = require('path'),
     generators = require('yeoman-generator'),
@@ -64,16 +65,18 @@ module.exports = generators.Base.extend({
     app: function () {
       var httpLib = this.httpLib;
       this.copy('gitignore', '.gitignore');
-      this.copy('_Goopfile', 'Goopfile');
 
-      var modelsDir = 'models/'
-      var controllersDir = 'controllers/'
-      var logsDir = 'logs/'
+      var modelsDir       = 'models/',
+          controllersDir  = 'controllers/',
+          logsDir         = 'logs/',
+          configDir       = 'config/',
+          environmentsDir = 'config/environments/';
       this.mkdir(modelsDir);
       this.mkdir(controllersDir);
       this.mkdir(logsDir);
+      this.mkdir(configDir);
+      this.mkdir(environmentsDir);
       this.copy(logsDir + 'gitkeep', logsDir + '.gitkeep');
-
 
       this.fs.copyTpl(
         this.templatePath('_server_' + httpLib + '.go'),
@@ -91,9 +94,32 @@ module.exports = generators.Base.extend({
         }
       );
 
-      this.template('controllers/_hello_' + httpLib + '_test.go', controllersDir + 'hello_test.go');
-      this.template('models/_hello.go', modelsDir + 'hello.go');
-      this.template('models/_hello_test.go', modelsDir + 'hello_test.go');
+      var packages = "";
+      if (httpLib == "echo") {
+        packages = "github.com/labstack/echo"
+      } else if (httpLib == "httprouter") {
+        packages = "github.com/julienschmidt/httprouter"
+      }
+
+      this.fs.copyTpl(
+        this.templatePath('_Goopfile'),
+        this.destinationPath('Goopfile'),
+        {
+          packages: packages
+        }
+      );
+
+      this.template(configDir + '_configuration.go', configDir + 'configuration.go');
+      this.template(environmentsDir + '_development.json', environmentsDir + 'development.json');
+      this.template(environmentsDir + '_docker.json', environmentsDir + 'docker.json');
+      this.template(environmentsDir + '_production.json', environmentsDir + 'production.json');
+      this.template(environmentsDir + '_qa.json', environmentsDir + 'qa.json');
+      this.template(environmentsDir + '_staging.json', environmentsDir + 'staging.json');
+      this.template(environmentsDir + '_test.json', environmentsDir + 'test.json');
+
+      this.template(controllersDir + '_hello_' + httpLib + '_test.go', controllersDir + 'hello_test.go');
+      this.template(modelsDir + '_hello.go', modelsDir + 'hello.go');
+      this.template(modelsDir + '_hello_test.go', modelsDir + 'hello_test.go');
       this.template('README.md.erb', 'README.md');
     }
   }

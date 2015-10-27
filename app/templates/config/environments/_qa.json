@@ -1,0 +1,8 @@
+{
+  "logging": {
+    "logToConsole": true,
+    "logToFile": true,
+    "logFilePath": "logs/development.log",
+    "logLevel": "DEBUG"
+  }
+}
