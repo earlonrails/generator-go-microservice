@@ -8,7 +8,7 @@ Install Yeoman:
 
     npm install -g yo
 
-Install the Angular-Go-Martini generator:
+Install the Go-Microservice generator:
 
     npm install -g generator-go-microservice
 
