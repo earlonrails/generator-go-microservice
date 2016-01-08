@@ -2,7 +2,7 @@
 
 ## Installation
 
-Install [Git](http://git-scm.com), [node.js](http://nodejs.org), and [Go 1.1](http://golang.org/).  The development mode also requires [SQLite](http://www.sqlite.org).
+Install [Git](http://git-scm.com), [node.js](http://nodejs.org), and [Go 1.4.2](http://golang.org/), I suggest using [gvm](https://github.com/moovweb/gvm).
 
 Install Yeoman:
 
