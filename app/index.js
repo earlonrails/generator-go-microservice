@@ -66,17 +66,10 @@ module.exports = generators.Base.extend({
       var httpLib = this.httpLib;
       this.copy('gitignore', '.gitignore');
 
-      var modelsDir       = 'models/',
-          controllersDir  = 'controllers/',
-          logsDir         = 'logs/',
-          configDir       = 'config/',
-          environmentsDir = 'config/environments/';
+      var modelsDir       = 'src/models/',
+          controllersDir  = 'src/controllers/',
       this.mkdir(modelsDir);
       this.mkdir(controllersDir);
-      this.mkdir(logsDir);
-      this.mkdir(configDir);
-      this.mkdir(environmentsDir);
-      this.copy(logsDir + 'gitkeep', logsDir + '.gitkeep');
 
       this.fs.copyTpl(
         this.templatePath('_server_' + httpLib + '.go'),
@@ -87,7 +80,7 @@ module.exports = generators.Base.extend({
       );
 
       this.fs.copyTpl(
-        this.templatePath('controllers/_hello_' + httpLib + '.go'),
+        this.templatePath('src/controllers/_hello_' + httpLib + '.go'),
         this.destinationPath(controllersDir + 'hello.go'),
         {
           baseName: this.baseName
@@ -109,18 +102,12 @@ module.exports = generators.Base.extend({
         }
       );
 
-      this.template(configDir + '_configuration.go', configDir + 'configuration.go');
-      this.template(environmentsDir + '_development.json', environmentsDir + 'development.json');
-      this.template(environmentsDir + '_docker.json', environmentsDir + 'docker.json');
-      this.template(environmentsDir + '_production.json', environmentsDir + 'production.json');
-      this.template(environmentsDir + '_qa.json', environmentsDir + 'qa.json');
-      this.template(environmentsDir + '_staging.json', environmentsDir + 'staging.json');
-      this.template(environmentsDir + '_test.json', environmentsDir + 'test.json');
 
       this.template(controllersDir + '_hello_' + httpLib + '_test.go', controllersDir + 'hello_test.go');
       this.template(modelsDir + '_hello.go', modelsDir + 'hello.go');
       this.template(modelsDir + '_hello_test.go', modelsDir + 'hello_test.go');
       this.template('README.md.erb', 'README.md');
+      this.spawnCommand('go', ['mod', 'init'], {'cwd': this.destinationPath('src')});
     }
   }
 });

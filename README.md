@@ -19,13 +19,13 @@ In a new directory, generate the service:
 
     yo go-microservice
 
-Get the dependencies:
-
-    goop install
-
 Run the service:
 
-    goop exec go run server.go
+    go build -o main && ./main
+
+Run the service via Docker:
+
+    docker-compose up
 
 Your service will run at [http://localhost:9001](http://localhost:9001).
 
