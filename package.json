@@ -26,7 +26,7 @@
   "dependencies": {
     "yeoman-generator": "~0.21.1",
     "URIjs": "~1.11.2",
-    "lodash": "~2.4.1",
+    "lodash": "~4.17.19",
     "underscore.string": "~2.3.3",
     "pluralize": "~0.0.6",
     "asciify": "~1.3.3"
